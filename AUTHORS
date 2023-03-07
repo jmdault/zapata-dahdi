@@ -1,0 +1,18 @@
+Original design: Jim Dixon, WB6NIL <jim@lambdatel.com>
+
+We wish to thank the following people for their gracious contributions to
+this project, or whose work has greatly contributed to this technology:
+
+David Kramer, Todd Lesser, Jim Gottlieb, Steve RoDgers, Joe Talbot, John
+Higdon, Clint Kennedy, Steve Thomas, Steve Underwood, Tony Fisher (may he
+rest in peace), Jesus Arias, Mark Balliet, Christian Mock, Christopher Lee
+Fraley, Julius Smith, Joe Campbell, the unknown person who wrote the ADPCM
+converter routines, and of course, Mark Spencer and Digium.
+
+answering_machine.c is (C) Bob Smith, 2005
+
+sample sounds: Allison Smith (http://www.theivrvoice.com)
+
+Jean-Michel Dault <jmdault@media5corp.com> resurrected the Zapata library in
+2023 by adapting it to use the new DAHDI interface. 
+He also wrote zaptest-incoming.c and zaptest-outgoing.c.

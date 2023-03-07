@@ -1,0 +1,74 @@
+Introduction
+============
+
+Zapata -- Unix-Based High Density Computer Telephony Project
+
+Current computer telephony technologies have 2 main problems: ludicrously
+high cost, and ludicrously low support.
+
+When you buy standard commercially-available computer telephony hardware
+these days, after having your wallet absolutely raped, you find that the
+product is broken, or at least has funny quirks that even the manufacturer
+doesn't seem to know about (or care) about, and isn't interested in (or
+for that matter capable of) giving you any reasonable level of support.
+This is completely consistent (without exception) among all of the major
+manufacturers.
+
+There is now finally hope after years of this type of severe dysfunction.
+
+The Zapata project, named after the famous Mexican Revolutionary, is an
+attempt to address these issues in a practical and livable manner.
+
+After much experimentation, it was found that it was quite feasible to
+achieve somewhat high channel-count density utilizing minimal hardware on
+a modern PC-style system, thus minimizing the hardware costs.
+
+In addition, a free open-source architecture running on a solid, stable,
+free open-source platform, completely eliminates support issues. This way,
+if you don't like what it does or the way it does it, you can 'fix' it
+yourself. Unlike many of the commercial manufacturers, we have nothing to
+hide or lose by making our technology and source code openly available to
+everyone.
+
+The Zapata Technology
+=====================
+
+The Zapata technology started with an interface card called "Tormenta".
+The project evolved from an ISA board, to PCI, to a whole range of devices.
+Once called "Zaptel", the driver interface is now integrated into Asterisk:
+https://github.com/asterisk/dahdi-linux
+
+The "zapata" library, however, had never been updated in many years and
+still required the original "tor/zaptel" driver.
+
+Jean-Michel Dault <jmdault@media5corp.com> resurrected the Zapata library in
+2023 by adapting it to use the new DAHDI interface.
+
+The driver and library fully implement all standard telecom functions,
+including signaling, DTMF and MF detection and generation, arbitrary single
+and dual tone generation, Caller*ID reception (on FXS channels), voice play
+and record, switching, and conferencing, yet consumes quite minimal system
+resources.
+
+In addition, Zapata fully implements Digital TTY/TDD modems within its
+library, making it the first ever multiple-line telecommunications
+solution for communicating with Deaf and hearing-impared people on a
+large-scale basis. Nothing else has ever even come close (the highest
+density devices to date have been single analog line based) at any price.
+
+And it's all freely available as open-source.
+
+Viva la revolucion de las computadoras telefonicas! Viva Zapata!
+
+Installation
+============
+
+To install the zapata library under Linux you should perform the following
+operations:
+
+1. Install a compatible kernel. Virtually any kernel since 2.4.2 will do.
+2. Install a DAHDI-compatible hardware. These are available from Sangoma, Xorcomm, Amfeltec and others. 
+3. Install dahdi-linux: https://github.com/asterisk/dahdi-linux
+4. Compile this library using "make".
+5. There are several test programs that will enable you to simulate incoming and outgoing calls, as well as an answering machine.
+

@@ -1,0 +1,17 @@
+2021-03-06 Jean-Michel Dault <jmdault@gmail.com>
+* zapata-dahdi 2.0
+* Removed ioctl(zap->fd,DAHDI_SYNC,&i) from zap.c as it prevented answering_machine to work properly.
+* Compiled with -fPIC to prevent "relocation R_X86_64_PC32 against symbol `fullmulaw' can not be used when making a shared object".
+
+2023-01-22 Jean-Michel Dault <jmdault@gmail.com>
+* zapata-dahdi 1.99
+* Forked from https://downloads.asterisk.org/pub/telephony/zaptel/releases/zapata-1.0.1.tar.gz
+* Internal files were marked as BSD Telephony Of Mexico "Zapata" Telecom Library, version 1.10 12/9/01
+* Ported From tormenta/zaptel to the newest DAHDI driver
+* Added some documentation from http://www.zapatatelephony.org/
+* Bundled example http://www.linuxtoys.org/answer/answering_machine.html
+* Adapted answering_machine to work on both FXS (0 rings) and FXO (>=1 rings)
+* Added some example files from https://downloads.asterisk.org/pub/telephony/sounds/asterisk-core-sounds-en-wav-current.tar.gz
+* Created new zaptest-incoming and zaptest-outgoing test applications
+* Bundled fxtest.c from https://downloads.asterisk.org/pub/telephony/dahdi-tools/dahdi-tools-3.2.0.tar.gz
+* Bundled usbfxstest from https://downloads.asterisk.org/pub/telephony/zaptel/zaptel-1.4.12.1.tar.gz
