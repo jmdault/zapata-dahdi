@@ -8,7 +8,7 @@ INSTALL_PREFIX=
 OBJS=zap.o goertzel.o filtros.o demodulador.o serie.o baudot.o dpll.o tone_detect.o
 
 
-all:	libzap.a libzap.so zaptest-incoming zaptest-outgoing usbfxstest answering_machine fxstest
+all:	libzap.a libzap.so zaptest-incoming zaptest-outgoing zaptest-chunk2alsa usbfxstest answering_machine fxstest
 
 $(LIBZAPA): $(OBJS)
 	ar rcs $(LIBZAPA) $(OBJS)
@@ -48,6 +48,9 @@ zaptest-incoming: zaptest-incoming.c libzap.a
 zaptest-outgoing: zaptest-outgoing.c libzap.a
 	cc -o zaptest-outgoing -I. zaptest-outgoing.c ./libzap.a -lm
 
+zaptest-chunk2alsa: zaptest-chunk2alsa.c libzap.a
+	cc -o zaptest-chunk2alsa -I. zaptest-chunk2alsa.c ./libzap.a -lm
+
 usbfxstest: usbfxstest.c libzap.a
 	cc -o usbfxstest -I. usbfxstest.c ./libzap.a -lm
 
@@ -60,7 +63,7 @@ fxstest: fxstest.c
 clean:
 	rm -f *.o
 	rm -f libzap.a tt mkcoef p_tmp_ libzap.so*
-	rm -f zaptest-outgoing zaptest-incoming
+	rm -f zaptest-outgoing zaptest-incoming zaptest-cw zaptest-chunk2alsa
 	rm -f usbfxstest answering_machine fxstest
 	rm -f *~ *.ul DEADJOE
 	make -C mkfilter clean
